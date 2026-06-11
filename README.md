@@ -23,7 +23,9 @@ Sentence length	10 Chinese characters
 Paper
 
 GRATS: A Natural Multi-Speed Mandarin Dataset for Speech Time-Scale Modification Benchmarking
+
 Ghaida Fathin Aghniya, Dyah A. M. G. Wisnu, Yu Tsao, Stefano Rini
+
 Accepted to Interspeech 2026.
 
 Paper link: Coming soon.
@@ -53,6 +55,9 @@ Email: ghaidafthn.ee13@nycu.edu.tw
 Please include your name, affiliation, research purpose, and intended use of the dataset.
 
 Citation
+
+If you use GRATS, please cite:
+
 @inproceedings{aghniya2026grats,
   title     = {{GRATS}: A Natural Multi-Speed Mandarin Dataset for Speech Time-Scale Modification Benchmarking},
   author    = {Aghniya, Ghaida Fathin and Wisnu, Dyah A. M. G. and Tsao, Yu and Rini, Stefano},
