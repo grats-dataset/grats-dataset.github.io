@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GRATS Dataset</title>
+
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #5f6b7a;
+      --primary: #264f8f;
+      --primary-dark: #17345f;
+      --border: #e5e7eb;
+      --soft: #edf3ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    header {
+      background: linear-gradient(135deg, #17345f, #3267b1);
+      color: white;
+      padding: 64px 24px 56px;
+      text-align: center;
+    }
+
+    header h1 {
+      max-width: 1050px;
+      margin: 0 auto 16px;
+      font-size: 2.3rem;
+      line-height: 1.2;
+      font-weight: 750;
+    }
+
+    header p {
+      max-width: 850px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      opacity: 0.95;
+    }
+
+    nav {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav .nav-inner {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1050px;
+      margin: 32px auto;
+      padding: 0 24px 56px;
+    }
+
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--primary-dark);
+      font-size: 1.45rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--primary-dark);
+      font-weight: 650;
+      font-size: 0.9rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .stat .num {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .stat .label {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f3f6fb;
+      color: var(--primary-dark);
+    }
+
+    ul {
+      margin-bottom: 0;
+    }
+
+    .notice {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #7c2d12;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+
+    pre {
+      background: #0f172a;
+      color: #e5e7eb;
+      padding: 18px;
+      border-radius: 12px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    code {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 28px 16px 48px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.65rem;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      nav .nav-inner {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <h1>GRATS: A Natural Multi-Speed Mandarin Dataset for Speech Time-Scale Modification Benchmarking</h1>
+    <p>
+      A naturally recorded parallel multi-speaker Mandarin dataset for evaluating speech time-scale modification systems under realistic speaking-rate variation.
+    </p>
+
+```
+<div class="badge-row" style="justify-content:center;">
+  <span class="badge">Mandarin Speech</span>
+  <span class="badge">25 Speakers</span>
+  <span class="badge">5 Speaking Rates</span>
+  <span class="badge">7,500 Utterances</span>
+  <span class="badge">Controlled Access</span>
+</div>
+```
+
+  </header>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#overview">Overview</a>
+      <a href="#paper">Paper</a>
+      <a href="#dataset">Dataset</a>
+      <a href="#benchmark">Benchmark</a>
+      <a href="#access">Access</a>
+      <a href="#citation">Citation</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="overview">
+      <h2>Overview</h2>
+      <p>
+        <strong>GRATS</strong> (Granular Rate Adaptation for Temporal Scaling) is a naturally recorded parallel multi-speaker Mandarin dataset designed for benchmarking Speech Time-Scale Modification (STSM) systems.
+      </p>
+      <p>
+        Unlike evaluation setups that use artificially time-scaled references, GRATS provides independently recorded target-rate utterances from the same speaker and sentence. This enables direct comparison between STSM-generated outputs and authentic target-rate recordings.
+      </p>
+
+```
+  <div class="grid">
+    <div class="stat">
+      <div class="num">25</div>
+      <div class="label">Native Mandarin speakers</div>
+    </div>
+    <div class="stat">
+      <div class="num">5</div>
+      <div class="label">Speaking-rate conditions</div>
+    </div>
+    <div class="stat">
+      <div class="num">7,500</div>
+      <div class="label">Fully parallel utterances</div>
+    </div>
+    <div class="stat">
+      <div class="num">8.10 h</div>
+      <div class="label">Total speech duration</div>
+    </div>
+  </div>
+</section>
+
+<section id="paper">
+  <h2>Paper</h2>
+  <p>
+    <strong>GRATS: A Natural Multi-Speed Mandarin Dataset for Speech Time-Scale Modification Benchmarking</strong><br />
+    Ghaida Fathin Aghniya, Dyah A. M. G. Wisnu, Yu Tsao, Stefano Rini
+  </p>
+  <p>
+    Accepted to <strong>Interspeech 2026</strong>.
+  </p>
+  <p>
+    Paper link: <em>Coming soon.</em>
+  </p>
+</section>
+
+<section id="dataset">
+  <h2>Dataset Summary</h2>
+  <table>
+    <tr><th>Property</th><th>Value</th></tr>
+    <tr><td>Language</td><td>Mandarin Chinese</td></tr>
+    <tr><td>Speakers</td><td>25</td></tr>
+    <tr><td>Gender</td><td>13 female / 12 male</td></tr>
+    <tr><td>Speaking rates</td><td>0.5×, 0.75×, 1.0×, 1.25×, 1.5×</td></tr>
+    <tr><td>Unique prompts</td><td>60</td></tr>
+    <tr><td>Total utterances</td><td>7,500</td></tr>
+    <tr><td>Total duration</td><td>8.10 hours</td></tr>
+    <tr><td>Sampling rate</td><td>44.1 kHz</td></tr>
+    <tr><td>Audio format</td><td>16-bit PCM WAV, mono</td></tr>
+    <tr><td>Sentence length</td><td>10 Chinese characters</td></tr>
+  </table>
+</section>
+
+<section id="benchmark">
+  <h2>Benchmark</h2>
+  <p>
+    GRATS is designed for evaluating STSM systems using natural target-rate references. The benchmark includes representative classical and neural STSM baselines and complementary metrics covering intelligibility, perceptual quality, temporal consistency, and pitch consistency.
+  </p>
+
+  <ul>
+    <li>Character Error Rate (CER)</li>
+    <li>Perceptual Evaluation of Speech Quality (PESQ)</li>
+    <li>Short-Time Objective Intelligibility (STOI)</li>
+    <li>Deep Noise Suppression Mean Opinion Score (DNSMOS)</li>
+    <li>Syllable-level duration Mean Absolute Error (MAE)</li>
+    <li>Fundamental frequency (F0) correlation</li>
+  </ul>
+
+  <p>
+    Benchmark scripts, metadata format, and evaluation instructions will be made available on this page.
+  </p>
+</section>
+
+<section id="access">
+  <h2>Dataset Access</h2>
+  <p>
+    The GRATS dataset will be released for research use through a controlled-access request process.
+  </p>
+
+  <div class="notice">
+    <strong>Current status:</strong> Access instructions and benchmark scripts are coming soon.
+  </div>
+
+  <p>
+    To request access, please contact:
+  </p>
+  <p>
+    <strong>Ghaida Fathin Aghniya</strong><br />
+    Email: <a href="mailto:ghaidafthn.ee13@nycu.edu.tw">ghaidafthn.ee13@nycu.edu.tw</a>
+  </p>
+
+  <p>
+    Please include your name, affiliation, research purpose, and intended use of the dataset.
+  </p>
+</section>
+
+<section id="citation">
+  <h2>Citation</h2>
+  <p>If you use GRATS, please cite:</p>
+```
+
+<pre><code>@inproceedings{aghniya2026grats,
+  title     = {{GRATS}: A Natural Multi-Speed Mandarin Dataset for Speech Time-Scale Modification Benchmarking},
+  author    = {Aghniya, Ghaida Fathin and Wisnu, Dyah A. M. G. and Tsao, Yu and Rini, Stefano},
+  booktitle = {Proc. Interspeech},
+  year      = {2026}
+}</code></pre>
+
+```
+</section>
+
+<section id="license">
+  <h2>License</h2>
+  <p>
+    The dataset is intended for non-commercial research use under controlled access. Detailed terms will be provided with the dataset access agreement.
+  </p>
+</section>
+```
+
+  </main>
+
+  <footer>
+    GRATS Project Page · Interspeech 2026
+  </footer>
+</body>
+</html>
